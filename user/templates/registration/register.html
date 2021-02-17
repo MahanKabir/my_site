@@ -1,0 +1,34 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+    <form class="form-group" action="{% url 'register' %}" method="POST">
+        {% csrf_token %}
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="card col-4">
+                    <div class="card-header">
+                        <h1>Register</h1>
+                    </div>
+                    <div class="card-body">
+
+                        <label for="id_username">Username:
+                            <input class="form-control" type="text" name="username" id="id_username" placeholder="Username...">
+                        </label>
+                        <label for="id_password1">Password:
+                            <input class="form-control" type="password" name="password1" id="id_password1" placeholder="Password...">
+                        </label>
+                        <label for="id_password2">Confirm:
+                            <input class="form-control" type="password" name="password2" id="id_password2" placeholder="Confirm...">
+                        </label>
+
+                    </div>
+                    <div class="card-footer">
+                        <input class="btn btn btn-outline-primary" type="submit" value="Register">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+{% endblock %}

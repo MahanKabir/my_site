@@ -1,6 +1,17 @@
+from django import forms
 from django.shortcuts import render
+from django.contrib.auth.forms import UserCreationForm
 
-# Create your views here.
 
 def register(request):
-    return render(request, 'main.html')
+    form = UserCreationForm()
+    if request.method == "POST":
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+
+    return render(request, 'registration/register.html', {'form': form})
+
+
+def profile(request):
+    return render(request, 'profile.html')
