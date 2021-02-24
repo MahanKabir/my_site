@@ -1,0 +1,34 @@
+{% extends 'main.html' %}
+
+{% block content %}
+    <h1>ثبت دوره</h1>
+    <form class="form-group" action="{% url 'create.course' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+
+        <div class="container">
+            <label for="id_title">عنوان:
+                <input class="form-control" type="text" name="title" id="id_title" placeholder="عنوان...">
+            </label>
+            <br>
+            <label for="id_name">نام:
+                <input class="form-control" type="text" name="name" id="id_name" placeholder="نام...">
+            </label>
+            <br>
+            <label for="id_describe">مشخصات:
+                <textarea class="form-control" type="text" name="describe" id="id_describe" placeholder="مشخصات..."></textarea>
+            </label>
+            <br>
+            <label for="id_price">قیمت:
+                <input class="form-control" type="number" min="0" name="price" id="id_price" placeholder="قیمت...">
+            </label>
+            <br>
+            <label for="id_image">عکس:
+                <input class="form-control" type="file" name="image" id="id_image">
+            </label>
+            <br>
+            <input class="btn btn-success" type="submit" value="ثبت">
+        </div>
+    </form>
+
+
+{% endblock %}
