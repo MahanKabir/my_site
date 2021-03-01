@@ -1,6 +1,6 @@
-{% extends 'main.html' %}
+{% extends 'admin/dashboard.html' %}
 
-{% block content %}
+{% block dashboard %}
     <h1>ثبت دوره</h1>
     <form class="form-group" action="{% url 'create.course' %}" method="post" enctype="multipart/form-data">
     {% csrf_token %}

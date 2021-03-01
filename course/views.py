@@ -2,12 +2,14 @@ from django.shortcuts import render, redirect
 from .forms import CourseForm
 from .models import Course
 
+
 # Create your views here.
 def create(request):
     if request.method == "POST":
         form = CourseForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
+            return redirect('read.course')
     return render(request, 'course/create.html')
 
 

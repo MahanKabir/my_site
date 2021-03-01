@@ -1,0 +1,30 @@
+{% extends 'main.html' %}
+
+
+{% block content %}
+
+    <div class="container">
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 justify-content-around">
+        {% for course in courses %}
+            <div class="col">
+                  <div class="card shadow-sm">
+                    <img src="/{{ course.image }}" width="420" height="300">
+                    <div class="card-body">
+                      <p class="card-text">{{ course.describe }}</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary">مشاهده</button>
+                          <button type="button" class="btn btn-sm btn-outline-secondary">افزودن</button>
+                        </div>
+                        <small class="text-muted">{{ course.title }}</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+        {% endfor %}
+
+
+      </div>
+    </div>
+{% endblock %}
