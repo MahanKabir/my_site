@@ -21,9 +21,9 @@
     <option name="TEMPLATE_CONFIGURATION" value="Django" />
     <option name="TEMPLATE_FOLDERS">
       <list>
-        <option value="$MODULE_DIR$/templates" />
         <option value="$MODULE_DIR$/user/templates" />
         <option value="$MODULE_DIR$/course/templates" />
+        <option value="$MODULE_DIR$/episode/templates" />
       </list>
     </option>
   </component>

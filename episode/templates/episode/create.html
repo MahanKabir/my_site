@@ -1,0 +1,17 @@
+{% extends 'admin/dashboard.html' %}
+
+{% block dashboard %}
+<form action="{% url 'create.episode' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+
+<input type="text" name="title">
+<input type="text" name="name">
+<input type="text" name="time">
+<textarea name="body"></textarea>
+<input type="file" name="video">
+
+<input type="submit" value="ثبت">
+
+
+</form>
+{% endblock %}
