@@ -1,0 +1,30 @@
+{% extends 'admin/dashboard.html' %}
+
+
+{% block dashboard %}
+
+    <h2>ثبت دسته‌بندی</h2>
+    <div class="container">
+        <form class="form-group" action="{% url 'create.category' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label for="id_title">عنوان:
+                <input class="form-control" type="text" id="id_title" name="title" placeholder="عنوان...">
+            </label>
+            <br>
+            <label for="id_name">نام:
+                <input class="form-control" type="text" id="id_name" name="name" placeholder="نام...">
+            </label>
+            <br>
+            <label for="id_body">توضیحات:
+                <textarea class="form-control" id="id_body" name="body"></textarea>
+            </label>
+            <br>
+            <label for="id_image">عنوان:
+                <input class="form-control" type="file" id="id_image" name="image">
+            </label>
+            <br>
+            <input class="btn btn-success" type="submit" value="ثبت دسته‌بندی">
+        </form>
+    </div>
+
+{% endblock %}

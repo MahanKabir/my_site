@@ -32,6 +32,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'category',
+    'article',
     'course',
     'episode',
     'user',
