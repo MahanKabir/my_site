@@ -3,5 +3,28 @@
 
 {% block dashboard %}
 
+    <h2>ویرایش دسته‌بندی</h2>
+    <div class="container">
+        <form class="form-group" action="{% url 'update.category' category.id %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label for="id_title">عنوان:
+                <input class="form-control" type="text" id="id_title" name="title" value="{{ category.title }}">
+            </label>
+            <br>
+            <label for="id_name">نام:
+                <input class="form-control" type="text" id="id_name" name="name" value="{{ category.name }}">
+            </label>
+            <br>
+            <label for="id_body">توضیحات:
+                <textarea class="form-control" id="id_body" name="body">{{ category.body }}</textarea>
+            </label>
+            <br>
+            <label for="id_image">عنوان:
+                <input class="form-control" type="file" id="id_image" name="image" value="{{ category.image }}">
+            </label>
+            <br>
+            <input class="btn btn-success" type="submit" value="ویرایش دسته‌بندی">
+        </form>
+    </div>
 
 {% endblock %}
